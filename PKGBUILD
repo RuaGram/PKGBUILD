@@ -57,7 +57,6 @@ source=("$pkgname::git+$_source#branch=$_branch"
         "tdesktop-fix-minizip-includes.patch")
 
 _source_tdlib() {
-
   _pkgsrc_tdlib="telegram-tdlib"
   source+=("$_pkgsrc_tdlib"::"git+https://github.com/tdlib/td.git")
   sha512sums+=('SKIP')
@@ -91,6 +90,13 @@ bail() {
 }
 
 validate_api() {
+
+    # Use the default API_ID and API_HASH from Telegram snap builds
+    # ref: https://gitlab.archlinux.org/archlinux/packaging/packages/telegram-desktop/-/blob/main/PKGBUILD#L98
+
+    export API_ID=${API_ID:-"611335"}
+    export API_HASH=${API_HASH:-"d524b414d21f4d37f08684c1df41ac9c"}
+
     [[ "$API_ID" =~ ^[1-9][0-9]*$ ]] || bail "API_ID must be a positive number"
     [[ "$API_HASH" =~ ^[0-9a-f]{32}$ ]] || bail "API_HASH must contain 32 hex digits [0-9a-f]"
 }
