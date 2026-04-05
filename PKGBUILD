@@ -1,7 +1,7 @@
 # Maintainer: Revincx <revincx233@gmail.com>
 
 pkgname=yukigram-rua
-pkgver=6.7.1.r24658.df74418ebb
+pkgver=6.7.3.r24710.d6f22b9c73
 pkgrel=1
 pkgdesc='Yet another unofficial tdesktop client, but forked from yukigram'
 arch=('x86_64')
@@ -12,7 +12,6 @@ conflicts=('yukigram-desktop')
 depends=(
     'abseil-cpp'
     'ada'
-    'boost-libs'
     'ffmpeg'
     'glib2'
     'hicolor-icon-theme'
@@ -43,8 +42,8 @@ depends=(
     'rnnoise'
     'xxhash'
 )
-makedepends=('cmake' 'git' 'ninja' 'python' 'range-v3' 'microsoft-gsl' 'ccache'
-             'libtg_owt' 'gobject-introspection' 'boost' 'fmt' 'glib2-devel' 'gperf')
+makedepends=('cmake' 'boost' 'boost-libs' 'git' 'ninja' 'python' 'range-v3' 'microsoft-gsl' 'ccache'
+             'libtg_owt' 'gobject-introspection' 'fmt' 'glib2-devel' 'gperf')
 optdepends=('geoclue: geoinformation support'
             'geocode-glib-2: geocoding support'
             'webkit2gtk: embedded browser features'
