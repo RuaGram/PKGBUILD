@@ -1,7 +1,7 @@
 # Maintainer: Revincx <revincx233@gmail.com>
 
 pkgname=yukigram-rua
-pkgver=6.7.3.r24710.d6f22b9c73
+pkgver=6.7.5.r24761.e768d50b8c
 pkgrel=1
 pkgdesc='Yet another unofficial tdesktop client, but forked from yukigram'
 arch=('x86_64')
