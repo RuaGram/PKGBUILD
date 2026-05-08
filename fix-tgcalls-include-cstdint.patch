@@ -1,0 +1,30 @@
+--- a/tgcalls/DirectConnectionChannel.h
++++ b/tgcalls/DirectConnectionChannel.h
+@@ -4,6 +4,7 @@
+ #include <functional>
+ #include <memory>
+ #include <vector>
++#include <cstdint>
+ 
+ namespace tgcalls {
+ 
+--- a/tgcalls/third-party/json11.cpp
++++ b/tgcalls/third-party/json11.cpp
+@@ -25,6 +25,7 @@
+ #include <cstdlib>
+ #include <cstdio>
+ #include <limits>
++#include <cstdint>
+ 
+ namespace json11 {
+ 
+--- a/tgcalls/v2/SignalingConnection.h
++++ b/tgcalls/v2/SignalingConnection.h
+@@ -3,6 +3,7 @@
+ 
+ #include <memory>
+ #include <vector>
++#include <cstdint>
+ 
+ namespace webrtc {
+ }
