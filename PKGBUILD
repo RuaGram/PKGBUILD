@@ -1,7 +1,7 @@
 # Maintainer: Revincx <revincx233@gmail.com>
 
 pkgname=yukigram-rua
-pkgver=6.7.8.r24966.eee0da781d
+pkgver=6.8.1.r25124.ccb5dae6dd
 pkgrel=1
 pkgdesc='Yet another unofficial tdesktop client, but forked from yukigram'
 arch=('x86_64')
@@ -53,7 +53,8 @@ _source="https://github.com/Revincx/Yukigram.git"
 _branch="dev"
 
 source=("$pkgname::git+$_source#branch=$_branch"
-        "tdesktop-fix-minizip-includes.patch")
+        "tdesktop-fix-minizip-includes.patch"
+        "fix-tgcalls-include-cstdint.patch")
 
 _source_tdlib() {
   _pkgsrc_tdlib="telegram-tdlib"
@@ -62,6 +63,7 @@ _source_tdlib() {
 }
 
 sha512sums=('SKIP'
+            'SKIP'
             'SKIP')
 
 pkgver() {
@@ -81,6 +83,7 @@ prepare() {
     git submodule update --init --recursive --force
     
     patch -Np1 -d $srcdir/$pkgname/Telegram/lib_base -i $srcdir/tdesktop-fix-minizip-includes.patch
+    patch -Np1 -d $srcdir/$pkgname/Telegram/ThirdParty/tgcalls -i $srcdir/fix-tgcalls-include-cstdint.patch
 }
 
 bail() {
