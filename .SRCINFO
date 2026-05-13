@@ -58,7 +58,6 @@ pkgbase = yukigram-rua
 	conflicts = yukigram-desktop
 	source = yukigram-rua::git+https://github.com/Revincx/Yukigram.git#branch=dev
 	source = tdesktop-fix-minizip-includes.patch
-	source = fix-tgcalls-include-cstdint.patch
 	source = telegram-tdlib::git+https://github.com/tdlib/td.git
 	sha512sums = SKIP
 	sha512sums = SKIP
