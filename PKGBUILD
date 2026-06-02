@@ -1,7 +1,7 @@
 # Maintainer: Revincx <revincx233@gmail.com>
 
 pkgname=yukigram-rua
-pkgver=6.8.1.r25124.ccb5dae6dd
+pkgver=6.8.2
 pkgrel=1
 pkgdesc='Yet another unofficial tdesktop client, but forked from yukigram'
 arch=('x86_64')
@@ -50,26 +50,18 @@ optdepends=('geoclue: geoinformation support'
             'xdg-desktop-portal: desktop integration')
 
 _source="https://github.com/Revincx/Yukigram.git"
-_branch="dev"
 
-source=("$pkgname::git+$_source#branch=$_branch"
+source=("$pkgname::git+$_source#tag=$pkgver-$pkgrel"
         "tdesktop-fix-minizip-includes.patch")
 
 _source_tdlib() {
   _pkgsrc_tdlib="telegram-tdlib"
   source+=("$_pkgsrc_tdlib"::"git+https://github.com/tdlib/td.git")
-  sha512sums+=('SKIP')
+  sha256sums+=('SKIP')
 }
 
-sha512sums=('SKIP'
-            'SKIP')
-
-pkgver() {
-    [[ -z "$HEAD" ]] && HEAD=origin/HEAD
-    cd "$pkgname"
-    local version="$(grep AppVersionStr Telegram/SourceFiles/core/version.h | head -1 | sed -e 's|.;||' -e 's|constexpr auto AppVersionStr = .||')"
-    printf "%s.r%s.%s" "$version" "$(git rev-list --count $HEAD)" "$(git rev-parse --short=10 $HEAD)"
-}
+sha256sums=('SKIP'
+            'f94abffdf1c302ad1081e6278516ec38f0fd89b9672271f4d44885b3f09ac886')
 
 _source_tdlib
 
