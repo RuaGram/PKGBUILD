@@ -2,7 +2,7 @@
 
 pkgname=yukigram-rua
 pkgver=6.8.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Yet another unofficial tdesktop client, but forked from yukigram'
 arch=('x86_64')
 url="https://github.com/Revincx/Yukigram"
