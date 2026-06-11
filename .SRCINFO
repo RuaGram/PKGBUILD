@@ -1,7 +1,7 @@
 pkgbase = yukigram-rua
 	pkgdesc = Yet another unofficial tdesktop client, but forked from yukigram
-	pkgver = 6.8.2
-	pkgrel = 2
+	pkgver = 6.9.1
+	pkgrel = 1
 	url = https://github.com/Revincx/Yukigram
 	arch = x86_64
 	license = GPL3
@@ -56,11 +56,9 @@ pkgbase = yukigram-rua
 	optdepends = xdg-desktop-portal: desktop integration
 	provides = yukigram-desktop
 	conflicts = yukigram-desktop
-	source = yukigram-rua::git+https://github.com/Revincx/Yukigram.git#tag=6.8.2-2
-	source = tdesktop-fix-minizip-includes.patch
+	source = yukigram-rua::git+https://github.com/Revincx/Yukigram.git#tag=6.9.1-1
 	source = telegram-tdlib::git+https://github.com/tdlib/td.git
 	sha256sums = SKIP
-	sha256sums = f94abffdf1c302ad1081e6278516ec38f0fd89b9672271f4d44885b3f09ac886
 	sha256sums = SKIP
 
 pkgname = yukigram-rua

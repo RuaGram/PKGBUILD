@@ -1,8 +1,8 @@
 # Maintainer: Revincx <revincx233@gmail.com>
 
 pkgname=yukigram-rua
-pkgver=6.8.2
-pkgrel=2
+pkgver=6.9.1
+pkgrel=1
 pkgdesc='Yet another unofficial tdesktop client, but forked from yukigram'
 arch=('x86_64')
 url="https://github.com/Revincx/Yukigram"
@@ -51,8 +51,7 @@ optdepends=('geoclue: geoinformation support'
 
 _source="https://github.com/Revincx/Yukigram.git"
 
-source=("$pkgname::git+$_source#tag=$pkgver-$pkgrel"
-        "tdesktop-fix-minizip-includes.patch")
+source=("$pkgname::git+$_source#tag=$pkgver-$pkgrel")
 
 _source_tdlib() {
   _pkgsrc_tdlib="telegram-tdlib"
@@ -60,8 +59,7 @@ _source_tdlib() {
   sha256sums+=('SKIP')
 }
 
-sha256sums=('SKIP'
-            'f94abffdf1c302ad1081e6278516ec38f0fd89b9672271f4d44885b3f09ac886')
+sha256sums=('SKIP')
 
 _source_tdlib
 
@@ -71,8 +69,6 @@ prepare() {
     export __SOURCE_DIR=$_source_dir
 
     git submodule update --init --recursive --force
-    
-    patch -Np1 -d $srcdir/$pkgname/Telegram/lib_base -i $srcdir/tdesktop-fix-minizip-includes.patch
 }
 
 bail() {
