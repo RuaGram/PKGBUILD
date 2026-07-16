@@ -1,14 +1,15 @@
 # Maintainer: Revincx <revincx233@gmail.com>
 
-pkgname=yukigram-rua
-pkgver=6.9.3
+pkgname=yurigram
+pkgver=7.0.1
 pkgrel=1
-pkgdesc='Yet another unofficial tdesktop client, but forked from yukigram'
+pkgdesc='Yet another unofficial tdesktop client'
 arch=('x86_64')
-url="https://github.com/Revincx/Yukigram"
+url="https://github.com/Revincx/Yurigram"
 license=('GPL3')
-provides=('yukigram-desktop')
-conflicts=('yukigram-desktop')
+provides=('yurigram')
+replaces=('yukigram-rua' 'yukigram-rua-bin')
+conflicts=('yukigram-rua' 'yukigram-rua-bin')
 depends=(
     'abseil-cpp'
     'ada'
@@ -48,7 +49,7 @@ optdepends=('geoclue: geoinformation support'
             'webkit2gtk: embedded browser features'
             'xdg-desktop-portal: desktop integration')
 
-_source="https://github.com/Revincx/Yukigram.git"
+_source="https://github.com/Revincx/Yurigram.git"
 
 source=("$pkgname::git+$_source#tag=$pkgver-$pkgrel")
 
@@ -107,7 +108,7 @@ build() {
     cmake --build "build_tde2e"
     DESTDIR="$srcdir/deps" cmake --install "build_tde2e"
 
-    echo "Building yukigram..."
+    echo "Building yurigram..."
     cmake -B build \
         -S $pkgname \
         -G Ninja \
